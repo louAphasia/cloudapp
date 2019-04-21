@@ -1,4 +1,4 @@
-public class compress  {
+public class compress_ilerazylit  {
     public String comp(String str){
         int c=1;
         StringBuilder builder= new StringBuilder();
@@ -33,9 +33,9 @@ public class compress  {
             }
 
     public static void main(String[] args) {
-        compress t= new compress();
+        compress_ilerazylit t= new compress_ilerazylit();
 
         t.comp("abbbbbbccccc");
-        t.comp("aaabbbcccc");
+        t.comp("aaabbccaa");
     }
         }
