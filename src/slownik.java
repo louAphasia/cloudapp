@@ -8,6 +8,8 @@ public class slownik {
         for (int i = 0; i < tekst.length();i++)
         	tab[tekst.charAt(i)] = 1;
 
+      
+        
         String slownik = "";
         for (int i = 0; i<256;i++)
         	if (tab[i] != 0) 
