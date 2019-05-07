@@ -1,6 +1,6 @@
 package szyfr;
 
-public class Cezar {
+public class szyfrCezar {
 
 	public static boolean isLetter(char znak) {
 		if (('A'<= znak && znak<='Z')||('a' <= znak && znak <='z'))
@@ -27,7 +27,7 @@ public class Cezar {
 return wyjsciowy;
 	}
 }
-}
+
 	
 
 
