@@ -1,5 +1,7 @@
 package szyfr;
 
+import java.io.FileNotFoundException;
+
 public class szyfrCezar {
 
 	public static boolean isLetter(char znak) {
@@ -8,17 +10,17 @@ public class szyfrCezar {
 		else
 			return false;
 	} 
-	
-	public static String Cezar(String tekst) {
+
+	public static String Cezar(String tekst,int p ) {
 		String wyjsciowy="";
 		for(int i=0;i<tekst.length();i++)
      {
 	if(isLetter(tekst.charAt(i)))
 			{
 		if (tekst.charAt(i)<91)
-		wyjsciowy+=((char)((tekst.charAt(i)-'A'+3))%26+'A');
+		wyjsciowy+=(char)((tekst.charAt(i)-'A'+p)%26+'A');
 		else
-		wyjsciowy+=((char)(tekst.charAt(i)-'a'+3)%26+'a');
+		wyjsciowy+=(char)((tekst.charAt(i)-'a'+p)%26+'a');
 	}
    else {
 		wyjsciowy+=tekst.charAt(i);
@@ -26,6 +28,28 @@ public class szyfrCezar {
      }
 return wyjsciowy;
 	}
+	
+	public static String reverse_Cezar(String tekst) {
+		String wyjscie="";
+		for (int i=0; i<tekst.length();i++) {
+			if(isLetter(tekst.charAt(i))) {
+				if(tekst.charAt(i)<91) wyjscie+=(char)((tekst.charAt(i)-'A'-3+26)%26+ 'A');
+				else wyjscie+=(char)((tekst.charAt(i)-'a'-3+26)%26+'a');
+			}
+			else wyjscie+= tekst.charAt(i);
+		}
+		return wyjscie;
+		
+			}
+		
+	
+	
+public static void main(String[] args) throws FileNotFoundException{
+	
+	 String st= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+System.out.println(Cezar(st,3));
+System.out.println(reverse_Cezar(Cezar(st,5)));
+}
 }
 
 	
